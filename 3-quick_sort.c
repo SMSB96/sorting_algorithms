@@ -1,5 +1,19 @@
 #include "sort.h"
 /**
+*swap - the positions of two elements into an array
+*@array: array
+*@item1: array element
+*@item2: array element
+*/
+void swap(int *array, ssize_t item1, ssize_t item2)
+{
+	int tmp;
+
+	tmp = array[item1];
+	array[item1] = array[item2];
+	array[item2] = tmp;
+}
+/**
  *lomuto_partition - lomuto partition sorting scheme implementation
  *@array: array
  *@first: first array element
@@ -61,18 +75,4 @@ void quick_sort(int *array, size_t size)
 	if (!array || size < 2)
 		return;
 	qs(array, 0, size - 1, size);
-}
-/**
-*swap - the positions of two elements into an array
-*@array: array
-*@item1: array element
-*@item2: array element
-*/
-void swap(int *array, ssize_t item1, ssize_t item2)
-{
-        int tmp;
-
-        tmp = array[item1];
-        array[item1] = array[item2];
-        array[item2] = tmp;
 }
